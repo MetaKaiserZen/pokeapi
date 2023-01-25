@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 
-import { colorTipo, tipoElemental } from '../controllers/pokeapi';
+import { colorTipo, tipoElemental } from '../../controllers/pokeapi';
 
 const TipoElemental = ({ pokemon }) =>
 {
@@ -10,9 +10,10 @@ const TipoElemental = ({ pokemon }) =>
                 style={
                 {
                     backgroundColor: colorTipo(pokemon.types[0].type.name),
-                    borderColor: "#FFFFFF",
-                    borderRadius: "10em",
-                    minWidth: "5em"
+                    borderColor: '#FFFFFF',
+                    borderRadius: '10em',
+                    minWidth: '5em',
+                    marginRight: '0.5em'
                 }}
             >
                 {tipoElemental(pokemon.types[0].type.name)}
@@ -22,9 +23,10 @@ const TipoElemental = ({ pokemon }) =>
                     style={
                     {
                         backgroundColor: colorTipo(pokemon.types[1].type.name),
-                        borderColor: "#FFFFFF",
-                        borderRadius: "10em",
-                        minWidth: "5em"
+                        borderColor: '#FFFFFF',
+                        borderRadius: '10em',
+                        minWidth: '5em',
+                        marginRight: '0.5em'
                     }}
                 >
                     {tipoElemental(pokemon.types[1].type.name)}

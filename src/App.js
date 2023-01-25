@@ -1,5 +1,3 @@
-import React from 'react';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MiApi from './components/MiApi';
@@ -7,7 +5,7 @@ import MiApi from './components/MiApi';
 function App()
 {
     return (
-        <div className="App">
+        <div className="App bg-light">
             <MiApi></MiApi>
         </div>
     );

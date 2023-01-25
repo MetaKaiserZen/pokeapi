@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 
-import { Col, Card, Button } from 'react-bootstrap';
+import { Col, Card } from 'react-bootstrap';
 
-import { colorTipo } from '../controllers/pokeapi';
+import { colorTipo } from '../../controllers/pokeapi';
 
 import TipoElemental from './TipoElemental';
 
 const PokeCard = (props) =>
 {
-    const [id, setID] = useState();
     const [pokemon, setPokemon] = useState();
+
+    const [index, setIndex] = useState();
     const [image, setImage] = useState();
 
     const consultarAPI = async ({ pokemon }) =>
@@ -20,11 +21,12 @@ const PokeCard = (props) =>
 
         const data = await response.json();
 
-        const id = data.game_indices.slice(-2)[0].game_index;
-        const imagen = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
+        const index = data.id;
+        const imagen = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index}.gif`;
 
-        setID(id);
         setPokemon(data);
+
+        setIndex(index);
         setImage(imagen);
     }
 
@@ -52,14 +54,14 @@ const PokeCard = (props) =>
                                     minHeight: '10em'
                                 }}
                             >
-                                <img src={image}></img>
+                                <img src={image} alt={image}></img>
                             </Card.Header>
                             <Card.Body>
                                 <Card.Subtitle
                                     className="mb-2 text-muted">#
                                     {
-                                        id.toString().length === 1 ? `00${id}`
-                                        : (id.toString().length === 2 ? `0${id}` : id)
+                                        index.toString().length === 1 ? `00${index}`
+                                        : (index.toString().length === 2 ? `0${index}` : index)
                                     }
                                 </Card.Subtitle>
                                 <Card.Title>{pokemon.name.charAt(0).toUpperCase()}{pokemon.name.slice(1)}</Card.Title>
@@ -67,7 +69,7 @@ const PokeCard = (props) =>
                             </Card.Body>
                             <Card.Footer>
                                 <div className="d-grid gap-2">
-                                    <Button variant="outline-dark">Ver</Button>
+                                    <a href={`${pokemon.name}`} className="btn btn-outline-dark">Ver</a>
                                 </div>
                             </Card.Footer>
                         </Card>
