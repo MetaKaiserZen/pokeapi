@@ -12,6 +12,10 @@
 
 * **https://pokeapi.vialdev.cl/**
 
+# YouTube
+
+* **https://youtu.be/a7cEhn9CHB0**
+
 # Versiones
 
 * **V0.0.0**
