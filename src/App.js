@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './App.css';
+
 import MiApi from './components/MiApi';
 
 function App()

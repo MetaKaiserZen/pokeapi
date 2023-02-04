@@ -36,9 +36,13 @@ const PokeCard = (props) =>
     }, []);
 
     if (pokemon &&
-        (props.type === 'all' ||
-        pokemon.types[0].type.name === props.type ||
-        (pokemon.types[1] !== undefined && pokemon.types[1].type.name === props.type)))
+        ((pokemon.types[1] === undefined &&
+        ((props.primaryType === 'all' || pokemon.types[0].type.name === props.primaryType) && props.secondaryType === 'all')) ||
+        ((pokemon.types[1] !== undefined) &&
+        ((props.primaryType === 'all' && props.secondaryType === 'all') ||
+        (pokemon.types[0].type.name === props.primaryType && props.secondaryType === 'all') ||
+        (props.primaryType === 'all' && pokemon.types[1].type.name === props.secondaryType) ||
+        (pokemon.types[0].type.name === props.primaryType && pokemon.types[1].type.name === props.secondaryType)))))
         {
             return (
                 <div>

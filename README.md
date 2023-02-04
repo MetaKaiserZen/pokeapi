@@ -12,10 +12,6 @@
 
 * **https://pokeapi.vialdev.cl/**
 
-# YouTube
-
-* **https://youtu.be/a7cEhn9CHB0**
-
 # Versiones
 
 * **V0.0.0**
@@ -77,6 +73,10 @@
 * **V4.3.0**
 
 * *Se organizan los componentes dentro de directorios*
+
+* **V4.4.0**
+
+* *Se actualizan los filtros por Tipo Elemental en el componente Home.jsx facilitando el filtro por Tipo Elemental Primario y por Tipo Elemental Secundario*
 
 # Datos Adicionales
 
